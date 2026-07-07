@@ -43,6 +43,18 @@ export const projects = [
     status: "Actively maintained",
   },
   {
+    id: "ostrich-algorithm",
+    title: "Ostrich Algorithm Simulator",
+    tagline: "Deadlock simulation with a Qt GUI",
+    description:
+      "A C++/Qt desktop app that simulates deadlocks between competing processes and lets you resolve them manually by killing a process — a hands-on look at the 'ignore it until it breaks' approach some operating systems take to deadlock handling.",
+    tech: ["C++17", "Qt 6", "Multithreading"],
+    github: "https://github.com/paulGitRoot/OS-Ostrich-Algorithm",
+    cover: "algorithm",
+    featured: false,
+    status: "Coursework project",
+  },
+  {
     id: "computer-graphics",
     title: "Computer Graphics",
     tagline: "OpenGL animation experiments",

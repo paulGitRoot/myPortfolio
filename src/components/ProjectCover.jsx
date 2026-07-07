@@ -4,6 +4,7 @@ const palettes = {
   terminal: { a: "#7dcfff", b: "#bb9af7" },
   graphics: { a: "#bb9af7", b: "#ff9e64" },
   web: { a: "#7aa2f7", b: "#9ece6a" },
+  algorithm: { a: "#f7768e", b: "#e0af68" },
 };
 
 const ProjectCover = ({ type }) => {
@@ -75,6 +76,32 @@ const ProjectCover = ({ type }) => {
           <line x1="160" y1="40" x2="160" y2="80" stroke={c.b} strokeWidth="2" opacity="0.6" />
           <line x1="115" y1="65" x2="160" y2="80" stroke={c.b} strokeWidth="2" opacity="0.6" />
           <line x1="205" y1="65" x2="160" y2="80" stroke={c.b} strokeWidth="2" opacity="0.6" />
+        </g>
+      )}
+
+      {type === "algorithm" && (
+        <g>
+          <circle cx="120" cy="70" r="18" fill="none" stroke={c.a} strokeWidth="2.5" />
+          <circle cx="200" cy="70" r="18" fill="none" stroke={c.b} strokeWidth="2.5" />
+          <path
+            d="M138 63 Q160 45 182 63"
+            stroke={c.a}
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+          <path
+            d="M182 77 Q160 95 138 77"
+            stroke={c.b}
+            strokeWidth="2"
+            fill="none"
+            markerEnd="url(#arrow)"
+          />
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6" fill="none" stroke={c.a} strokeWidth="1.5" />
+            </marker>
+          </defs>
         </g>
       )}
 
