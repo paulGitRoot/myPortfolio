@@ -31,7 +31,7 @@ const Hero = () => (
         <img
           src="/photo_2025-10-23_16-37-07.jpg"
           alt="Pawlos Addisu"
-          className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-[var(--border)] grayscale shrink-0"
+          className="w-9 h-9 md:w-10 md:h-10 rounded-full object-cover border-2 border-[var(--border)] grayscale shrink-0"
         />
         <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--text)] leading-tight">
           Pawlos Addisu

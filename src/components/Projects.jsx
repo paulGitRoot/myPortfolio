@@ -17,7 +17,7 @@ const Projects = ({ isHome = false }) => {
           A few things I've built, from real apps to hands-on Linux configs. Click any
           card to see the code.
         </p>
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-5 grid-cols-2">
           {projectList.map((project) => (
             <Project key={project.id} project={project} />
           ))}

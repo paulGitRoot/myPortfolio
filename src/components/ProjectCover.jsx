@@ -11,7 +11,7 @@ const ProjectCover = ({ type }) => {
   const gradId = `grad-${type}`;
 
   return (
-    <svg viewBox="0 0 320 140" className="w-full h-20 rounded-md" preserveAspectRatio="xMidYMid slice">
+    <svg viewBox="0 0 320 140" className="w-full h-12 rounded-md" preserveAspectRatio="xMidYMid slice">
       <defs>
         <linearGradient id={gradId} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor={c.a} stopOpacity="0.25" />
