@@ -23,23 +23,26 @@ const Hero = () => (
     />
 
     <div className="relative max-w-5xl mx-auto px-6">
-      <div className="flex flex-col md:flex-row md:items-center gap-8 mb-10">
+      <p className="font-mono-display text-[var(--green)] text-sm mb-3">
+        <span className="text-[var(--text-muted)]">$</span> whoami
+      </p>
+
+      <div className="flex items-center gap-4 mb-4">
         <img
           src="/photo_2025-10-23_16-37-07.jpg"
           alt="Pawlos Addisu"
-          className="w-28 h-28 md:w-36 md:h-36 rounded-full object-cover border-2 border-[var(--border)] shrink-0"
+          className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-[var(--border)] grayscale shrink-0"
         />
-        <div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[var(--text)] mb-3 leading-tight">
-            Hi, I'm Pawlos.
-          </h1>
-          <p className="text-lg md:text-xl text-[var(--text-dim)] max-w-2xl">
-            I build backend systems and APIs, and I'm just as comfortable setting up
-            and maintaining Linux servers. Recently graduated from Addis Ababa
-            University, currently looking for my next role.
-          </p>
-        </div>
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--text)] leading-tight">
+          Pawlos Addisu
+        </h1>
       </div>
+
+      <p className="text-lg md:text-xl text-[var(--text-dim)] max-w-2xl mb-10">
+        I build backend systems and APIs, and I'm just as comfortable setting up
+        and maintaining Linux servers. Recently graduated from Addis Ababa
+        University, currently looking for my next role.
+      </p>
 
       {/* neofetch-style terminal panel — a fun detail, explained below for anyone who doesn't speak Linux */}
       <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl overflow-hidden max-w-3xl">
