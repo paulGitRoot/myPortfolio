@@ -9,8 +9,9 @@ import {
   FaCuttlefish,
   FaServer,
   FaHdd,
+  FaCogs,
 } from "react-icons/fa";
-import { SiFlutter, SiDart, SiTailwindcss, SiSystemd, SiGo } from "react-icons/si";
+import { SiFlutter, SiDart, SiTailwindcss, SiGo } from "react-icons/si";
 
 const groups = [
   {
@@ -27,7 +28,7 @@ const groups = [
     items: [
       { icon: <FaLinux />, name: "Linux Admin" },
       { icon: <FaTerminal />, name: "i3wm" },
-      { icon: <SiSystemd />, name: "systemd" },
+      { icon: <FaCogs />, name: "systemd" },
       { icon: <FaHdd />, name: "LVM / Disk Mgmt" },
     ],
   },
