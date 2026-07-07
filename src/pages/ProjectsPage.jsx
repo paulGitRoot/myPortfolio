@@ -1,11 +1,10 @@
-import Projects from "../components/Projects"
+import Projects from "../components/Projects";
 
 const ProjectsPage = () => {
   return (
-    <>
-        <Projects />
-    </>
-  )
-}
-
-export default ProjectsPage
+    <div className="pt-16">
+      <Projects />
+    </div>
+  );
+};
+export default ProjectsPage;

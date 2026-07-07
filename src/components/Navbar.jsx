@@ -1,56 +1,93 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
-  const navClassLink = ({ isActive }) =>
-    isActive
-      ? "text-white bg-gray-900 hover:bg-gray-700 hover:text-white rounded-md px-4 py-2 font-bold uppercase tracking-wide transition"
-      : "text-gray-900 hover:bg-gray-900 hover:text-white rounded-md px-4 py-2 font-bold uppercase tracking-wide transition";
+const links = [
+  { to: "/", label: "home" },
+  { to: "/projects", label: "projects" },
+  { to: "/contact", label: "contact" },
+];
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    `px-3 py-1.5 rounded-md font-mono-display text-sm transition-colors ${
+      isActive
+        ? "text-[var(--accent)] bg-[var(--surface-hover)]"
+        : "text-[var(--text-dim)] hover:text-[var(--text)] hover:bg-[var(--surface)]"
+    }`;
 
   return (
-    <header className="fixed top-0 w-full bg-white z-50 shadow-md">
-      <nav className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between py-4">
-        {/* Brand with image */}
-        <NavLink to="/" className="flex items-center gap-3">
-          <img
-            src="/Paul.jpg"
-            alt="Pawlos Addisu"
-            className="w-10 h-10 object-cover rounded-full border border-gray-300 shadow"
-          />
-          <span className="text-xl font-extrabold text-gray-900 uppercase tracking-wide">
-            Paul
+    <header className="fixed top-0 w-full z-50 bg-[var(--bg-alt)]/90 backdrop-blur border-b border-[var(--border)]">
+      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <NavLink to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
+          <span className="flex gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--red)]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[var(--green)]" />
+          </span>
+          <span className="font-mono-display text-[var(--text)] font-bold ml-2 group-hover:text-[var(--accent)] transition-colors">
+            pawlos@dev
           </span>
         </NavLink>
 
-        {/* Navigation */}
-        <div className="flex items-center gap-6">
-          <ul className="hidden md:flex items-center gap-6 list-none">
-            <li>
-              <NavLink to="/" className={navClassLink}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/projects" className={navClassLink}>
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact" className={navClassLink}>
-                Contact
-              </NavLink>
-            </li>
-          </ul>
-
-          {/* Hamburger */}
-          <button className="md:hidden flex flex-col gap-1.5 p-1.5">
-            <span className="block w-6 h-0.5 bg-gray-900 transition-transform"></span>
-            <span className="block w-6 h-0.5 bg-gray-900 transition-opacity"></span>
-            <span className="block w-6 h-0.5 bg-gray-900 transition-transform"></span>
-          </button>
+        <div className="hidden md:flex items-center gap-2">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} className={linkClass} end={l.to === "/"}>
+              <span className="text-[var(--text-muted)]">~/</span>
+              {l.label}
+            </NavLink>
+          ))}
+          <a
+            href="/Pawlos_Addisu_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-4 py-1.5 rounded-md font-mono-display text-sm font-semibold bg-[var(--accent)] text-[var(--bg)] hover:bg-[var(--accent-dim)] transition-colors"
+          >
+            resume.pdf
+          </a>
         </div>
+
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          aria-expanded={open}
+        >
+          <span
+            className={`block w-6 h-0.5 bg-[var(--text)] transition-transform ${
+              open ? "translate-y-2 rotate-45" : ""
+            }`}
+          />
+          <span className={`block w-6 h-0.5 bg-[var(--text)] transition-opacity ${open ? "opacity-0" : ""}`} />
+          <span
+            className={`block w-6 h-0.5 bg-[var(--text)] transition-transform ${
+              open ? "-translate-y-2 -rotate-45" : ""
+            }`}
+          />
+        </button>
       </nav>
+
+      {open && (
+        <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-alt)] px-6 py-4 flex flex-col gap-2">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} className={linkClass} end={l.to === "/"} onClick={() => setOpen(false)}>
+              <span className="text-[var(--text-muted)]">~/</span>
+              {l.label}
+            </NavLink>
+          ))}
+          <a
+            href="/Pawlos_Addisu_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 px-4 py-2 rounded-md font-mono-display text-sm font-semibold bg-[var(--accent)] text-[var(--bg)] text-center"
+          >
+            resume.pdf
+          </a>
+        </div>
+      )}
     </header>
   );
 };
 
-export default Header;
+export default Navbar;

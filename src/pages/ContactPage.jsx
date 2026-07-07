@@ -1,40 +1,45 @@
 import { useState } from "react";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [sent, setSent] = useState(false);
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    const subject = encodeURIComponent(`Portfolio contact from ${formData.name}`);
+    const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name} (${formData.email})`);
+    window.location.href = `mailto:paulpapi94@gmail.com?subject=${subject}&body=${body}`;
+    setSent(true);
   };
 
+  const fieldClass =
+    "w-full px-4 py-3 rounded-md bg-[var(--surface)] text-[var(--text)] border border-[var(--border)] focus:outline-none focus:border-[var(--accent)] font-mono-display text-sm placeholder:text-[var(--text-muted)]";
+
   return (
-    <section className="min-h-screen py-24 px-6 bg-white text-gray-900">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center uppercase tracking-wide mb-6">
+    <section className="min-h-screen pt-32 pb-24 px-6 bg-[var(--bg)]">
+      <div className="max-w-2xl mx-auto">
+        <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3">
+          <span className="text-[var(--text-muted)]">$</span> mail --compose
+        </p>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-4">
           Contact Me
         </h2>
-        <p className="text-center text-gray-700 font-medium mb-12 leading-relaxed">
-          Have a project in mind or just want to say hi? I'd love to hear from you!
+        <p className="text-[var(--text-dim)] mb-10">
+          Fill this in and it'll open your email client with the message pre-filled —
+          or just email me directly at{" "}
+          <a href="mailto:paulpapi94@gmail.com" className="text-[var(--accent)] hover:underline">
+            paulpapi94@gmail.com
+          </a>
+          .
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="bg-gray-100 rounded-xl p-8 shadow-md space-y-6"
-        >
+        <form onSubmit={handleSubmit} className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 space-y-5">
           <div>
-            <label
-              htmlFor="name"
-              className="block text-sm font-semibold text-gray-800 mb-2 uppercase tracking-wide"
-            >
-              Name
+            <label htmlFor="name" className="block text-xs font-mono-display text-[var(--accent-2)] mb-2 uppercase tracking-wide">
+              name
             </label>
             <input
               type="text"
@@ -43,16 +48,13 @@ const ContactPage = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900"
+              placeholder="Jane Doe"
+              className={fieldClass}
             />
           </div>
-
           <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold text-gray-800 mb-2 uppercase tracking-wide"
-            >
-              Email
+            <label htmlFor="email" className="block text-xs font-mono-display text-[var(--accent-2)] mb-2 uppercase tracking-wide">
+              email
             </label>
             <input
               type="email"
@@ -61,16 +63,13 @@ const ContactPage = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900"
+              placeholder="jane@company.com"
+              className={fieldClass}
             />
           </div>
-
           <div>
-            <label
-              htmlFor="message"
-              className="block text-sm font-semibold text-gray-800 mb-2 uppercase tracking-wide"
-            >
-              Message
+            <label htmlFor="message" className="block text-xs font-mono-display text-[var(--accent-2)] mb-2 uppercase tracking-wide">
+              message
             </label>
             <textarea
               name="message"
@@ -79,15 +78,15 @@ const ContactPage = () => {
               required
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 resize-none"
-            ></textarea>
+              placeholder="Let's talk about..."
+              className={`${fieldClass} resize-none`}
+            />
           </div>
-
           <button
             type="submit"
-            className="w-full py-4 bg-gray-900 text-white font-semibold uppercase tracking-wide rounded-lg hover:bg-gray-700 transform hover:-translate-y-1 transition"
+            className="w-full py-3.5 bg-[var(--accent)] text-[var(--bg)] font-mono-display font-bold rounded-md hover:bg-[var(--accent-dim)] transition-colors"
           >
-            Send Message
+            {sent ? "opening mail client..." : "send_message()"}
           </button>
         </form>
       </div>

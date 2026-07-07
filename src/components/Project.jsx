@@ -1,25 +1,65 @@
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+
 const Project = ({ project }) => {
   return (
-    <div className="bg-white rounded-xl p-6 shadow hover:-translate-y-2 transition border border-transparent hover:border-gray-900">
-      <div className="w-14 h-14 bg-gray-900 rounded-full flex items-center justify-center mb-4 text-white text-xl">
-        {project.icon}
+    <div className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 hover:border-[var(--accent)] transition-colors flex flex-col">
+      <div className="flex items-start justify-between mb-3">
+        <div>
+          <h3 className="text-lg font-bold text-[var(--text)] font-mono-display">
+            {project.title}
+          </h3>
+          <p className="text-sm text-[var(--accent-2)]">{project.tagline}</p>
+        </div>
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${project.title} on GitHub`}
+          className="text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors text-xl shrink-0 ml-3"
+        >
+          <FaGithub />
+        </a>
       </div>
-      <h3 className="text-xl font-extrabold text-gray-900 uppercase tracking-wide mb-2">
-        {project.title}
-      </h3>
-      <p className="text-base text-gray-700 leading-relaxed font-medium mb-4">
+
+      <p className="text-sm text-[var(--text-dim)] leading-relaxed mb-4 flex-grow">
         {project.description}
       </p>
-      <div className="flex flex-wrap gap-2">
-        {project.tech.map((tech, index) => (
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        {project.tech.map((tech) => (
           <span
-            key={index}
-            className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide"
+            key={tech}
+            className="px-2.5 py-1 rounded text-xs font-mono-display bg-[var(--surface-hover)] text-[var(--text-dim)] border border-[var(--border)]"
           >
             {tech}
           </span>
         ))}
       </div>
+
+      <div className="flex items-center justify-between pt-4 border-t border-[var(--border)]">
+        <span className="text-xs text-[var(--text-muted)] font-mono-display">
+          {project.status}
+        </span>
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-xs font-mono-display font-semibold text-[var(--accent)] hover:text-[var(--accent-dim)] transition-colors"
+        >
+          view repo <FaExternalLinkAlt className="text-[10px]" />
+        </a>
+      </div>
+
+      {project.secondaryLink && (
+        <a
+          href={project.secondaryLink.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-[var(--text-muted)] hover:text-[var(--accent-2)] mt-2 underline underline-offset-2"
+        >
+          {project.secondaryLink.label} →
+        </a>
+      )}
     </div>
   );
 };

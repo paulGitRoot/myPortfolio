@@ -1,66 +1,85 @@
-import { FaCuttlefish,FaJava,FaCode,FaNodeJs,FaServer,FaReact,FaDatabase,FaExternalLinkAlt,FaJsSquare,FaPython,FaCube, FaLinux } from "react-icons/fa";
-const Skills = () => {
-  const divClass =
-    "bg-gray-100 rounded-xl p-6 text-center hover:-translate-y-2 transition border border-transparent hover:border-gray-900 shadow-sm";
-  const iconClass = "text-3xl text-gray-900 mb-4";
+import {
+  FaDatabase,
+  FaLinux,
+  FaReact,
+  FaJsSquare,
+  FaPython,
+  FaFire,
+  FaTerminal,
+  FaCuttlefish,
+  FaServer,
+  FaHdd,
+} from "react-icons/fa";
+import { SiFlutter, SiDart, SiTailwindcss, SiSystemd, SiGo } from "react-icons/si";
 
+const groups = [
+  {
+    label: "backend",
+    items: [
+      { icon: <SiGo />, name: "Go" },
+      { icon: <FaDatabase />, name: "PostgreSQL" },
+      { icon: <FaServer />, name: "REST APIs" },
+      { icon: <FaCuttlefish />, name: "C++" },
+    ],
+  },
+  {
+    label: "systems / linux",
+    items: [
+      { icon: <FaLinux />, name: "Linux Admin" },
+      { icon: <FaTerminal />, name: "i3wm" },
+      { icon: <SiSystemd />, name: "systemd" },
+      { icon: <FaHdd />, name: "LVM / Disk Mgmt" },
+    ],
+  },
+  {
+    label: "mobile / frontend",
+    items: [
+      { icon: <SiFlutter />, name: "Flutter" },
+      { icon: <SiDart />, name: "Dart" },
+      { icon: <FaReact />, name: "React" },
+      { icon: <SiTailwindcss />, name: "Tailwind" },
+    ],
+  },
+  {
+    label: "tools & other",
+    items: [
+      { icon: <FaFire />, name: "Firebase" },
+      { icon: <FaJsSquare />, name: "JavaScript" },
+      { icon: <FaPython />, name: "Python" },
+    ],
+  },
+];
+
+const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-white text-gray-900">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <h2 className="text-4xl md:text-5xl text-center font-extrabold uppercase tracking-wide mb-12">
+    <section id="skills" className="py-24 bg-[var(--bg)]">
+      <div className="max-w-5xl mx-auto px-6">
+        <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3">
+          <span className="text-[var(--text-muted)]">$</span> cat skills.txt
+        </p>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-12">
           Skills
-          <span className="block w-12 h-1 bg-gray-900 mx-auto mt-4"></span>
         </h2>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          <div className={divClass}>
-            <FaCuttlefish className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">C++</h3>
-          </div>
-          <div className={divClass}>
-            <FaJava className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">Java</h3>
-          </div>
-          <div className={divClass}>
-            <FaCode className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">OOP</h3>
-          </div>
-          <div className={divClass}>
-            <FaNodeJs className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">Node.js</h3>
-          </div>
-          <div className={divClass}>
-            <FaLinux className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">LINUX</h3>
-          </div>
-          <div className={divClass}>
-            <FaCube className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">OpenGL</h3>
-          </div>
-          <div className={divClass}>
-            <FaServer className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">Express.js</h3>
-          </div>
-          <div className={divClass}>
-            <FaReact className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">React</h3>
-          </div>
-          <div className={divClass}>
-            <FaDatabase className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">MongoDB</h3>
-          </div>
-          <div className={divClass}>
-            <FaExternalLinkAlt className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">Next.js</h3>
-          </div>
-          <div className={divClass}>
-            <FaJsSquare className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">JavaScript</h3>
-          </div>
-          <div className={divClass}>
-            <FaPython className={iconClass} />
-            <h3 className="text-lg font-bold uppercase tracking-wide">Python</h3>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {groups.map((group) => (
+            <div
+              key={group.label}
+              className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5"
+            >
+              <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider mb-4">
+                {group.label}
+              </p>
+              <ul className="space-y-3">
+                {group.items.map((item) => (
+                  <li key={item.name} className="flex items-center gap-3 text-[var(--text-dim)]">
+                    <span className="text-[var(--accent-2)] text-lg">{item.icon}</span>
+                    <span className="text-sm font-medium">{item.name}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,1 +1,66 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #16161e;
+  --bg-alt: #1a1b26;
+  --surface: #1f2335;
+  --surface-hover: #24283b;
+  --border: #2a2e42;
+  --text: #c0caf5;
+  --text-dim: #9aa5ce;
+  --text-muted: #565f89;
+  --accent: #ff9e64;
+  --accent-dim: #cc7e50;
+  --accent-2: #7dcfff;
+  --green: #9ece6a;
+  --red: #f7768e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-mono-display {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+/* Scrollbar to match the terminal feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

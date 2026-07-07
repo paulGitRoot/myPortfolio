@@ -1,87 +1,38 @@
-import {
-  FaLock,
-  FaExclamationTriangle,
-  FaChartLine,
-  FaGlobe,
-  FaCube,
-} from "react-icons/fa";
 import Project from "./Project";
-
-const projects = [
-  {
-    title: "OS Mutual Exclusion",
-    description:
-      "Implementation of mutual exclusion in operating systems using C++ with various methods including disabling interrupts, locking variables, strict alteration, semaphores, message passing, and monitors.",
-    tech: ["C++", "Operating Systems"],
-    icon: <FaLock className="text-white" />,
-  },
-  {
-    title: "OS Ostrich Algorithm",
-    description:
-      "Implementation of the ostrich algorithm for deadlock handling, which ignores deadlocks and alerts users only when the system freezes, allowing user intervention to kill problematic processes.",
-    tech: ["C++", "Algorithms"],
-    icon: <FaExclamationTriangle className="text-white" />,
-  },
-  {
-    title: "Dynamic Programming",
-    description:
-      "Implementation of dynamic programming solutions that store calculated results and reuse them when necessary, optimizing recursive functions by avoiding redundant calculations.",
-    tech: ["Algorithms", "Optimization"],
-    icon: <FaChartLine className="text-white" />,
-  },
-  {
-    title: "Public Listing Web Application",
-    description:
-      "A web application for public listings with modern web technologies, featuring user-friendly interface and efficient data management.",
-    tech: ["Web Development", "JavaScript"],
-    icon: <FaGlobe className="text-white" />,
-  },
-  {
-    title: "Computer Graphics",
-    description:
-      "Implementation of simple and advanced OpenGL animations using Python and C++, demonstrating 3D graphics programming and animation techniques.",
-    tech: ["OpenGL", "Python", "C++"],
-    icon: <FaCube className="text-white" />,
-  },
-  {
-    title: "Portfolio Website",
-    description: "A personal portfolio website built with React and Tailwind CSS.",
-    tech: ["React", "Tailwind CSS"],
-    icon: <FaGlobe className="text-white" />,
-  },
-  {
-    title: "Task Manager API",
-    description: "A RESTful API built with Express.js and MongoDB for managing tasks.",
-    tech: ["Express.js", "MongoDB"],
-    icon: <FaLock className="text-white" />,
-  },
-  {
-    title: "Job Finder App",
-    description: "A job listing platform built with React, Node.js, and MongoDB.",
-    tech: ["React", "Node.js", "MongoDB"],
-    icon: <FaChartLine className="text-white" />,
-  },
-];
+import { projects, featuredProjects } from "../data/projects";
 
 const Projects = ({ isHome = false }) => {
-  const projectList = isHome ? projects.slice(0, 4) : projects;
+  const projectList = isHome ? featuredProjects : projects;
 
   return (
-    <section
-      id="projects"
-      className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors"
-    >
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <h2 className="text-4xl md:text-5xl text-center font-extrabold uppercase tracking-wide mb-12">
-          {isHome ? "Projects" : "My Projects"}
-          <span className="block w-12 h-1 bg-gray-900 dark:bg-white mx-auto mt-4"></span>
+    <section id="projects" className="py-24 bg-[var(--bg-alt)] border-y border-[var(--border)]">
+      <div className="max-w-6xl mx-auto px-6">
+        <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3">
+          <span className="text-[var(--text-muted)]">$</span> ls ~/projects
+        </p>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-12">
+          {isHome ? "Featured Projects" : "All Projects"}
         </h2>
-
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projectList.map((project) => (
-            <Project key={project.title} project={project} />
+            <Project key={project.id} project={project} />
           ))}
         </div>
+
+        {!isHome && (
+          <p className="mt-10 text-sm text-[var(--text-dim)] font-mono-display">
+            More coursework & smaller exercises live on{" "}
+            <a
+              href="https://github.com/paulGitRoot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--accent)] hover:text-[var(--accent-dim)] underline underline-offset-2"
+            >
+              github.com/paulGitRoot
+            </a>
+            .
+          </p>
+        )}
       </div>
     </section>
   );

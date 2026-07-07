@@ -1,32 +1,45 @@
-import { useLocation } from "react-router-dom";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+
 const Footer = () => {
-  const location = useLocation();
-  const currentHash = location.hash;
-
-  const navClassLink = (hash) =>
-    currentHash === hash
-      ? "text-white font-semibold mx-2"
-      : "text-gray-300 hover:text-white font-semibold mx-2";
-
   return (
-    <footer className="py-10 bg-gray-900 text-gray-300 text-center">
-      <p className="text-sm font-medium">
-        © {new Date().getFullYear()} Pawlos Addisu. All rights reserved.
+    <footer className="py-10 bg-[var(--bg-alt)] border-t border-[var(--border)] text-center">
+      <p className="text-sm text-[var(--text-muted)] font-mono-display">
+        © {new Date().getFullYear()} Pawlos Addisu — built with React & Tailwind
       </p>
-      <div className="mt-4 flex justify-center gap-4 text-sm uppercase tracking-wide">
-        <a href="https://github.com/" className="hover:text-white font-semibold">
+      <div className="mt-4 flex justify-center gap-6 text-lg text-[var(--text-dim)]">
+        <a
+          href="https://github.com/paulGitRoot"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[var(--accent)] transition-colors"
+          aria-label="GitHub"
+        >
           <FaGithub />
         </a>
-        <a href="https://linkedin.com/" className="hover:text-white font-semibold">
+        <a
+          href="https://linkedin.com/in/pawlos-addisu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-[var(--accent)] transition-colors"
+          aria-label="LinkedIn"
+        >
           <FaLinkedin />
         </a>
-        <a href="#home" className={navClassLink("#home")}>
-          Back to Top
+        <a
+          href="mailto:paulpapi94@gmail.com"
+          className="hover:text-[var(--accent)] transition-colors"
+          aria-label="Email"
+        >
+          <FaEnvelope />
+        </a>
+        <a
+          href="#home"
+          className="text-sm font-mono-display text-[var(--text-muted)] hover:text-[var(--text)] self-center"
+        >
+          back to top ↑
         </a>
       </div>
     </footer>
   );
 };
-
 export default Footer;
