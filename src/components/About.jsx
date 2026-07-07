@@ -15,8 +15,9 @@ const About = () => {
           <p>
             Day to day that means Go and PostgreSQL on the backend, Flutter/Firebase
             when I need to ship something end-to-end, and a Linux Mint + i3wm setup
-            I've tuned by hand — window management, systemd services, disk and LVM
-            work included.
+            I've tuned by hand — i3wm is a lightweight, keyboard-driven desktop
+            environment for Linux, and "tuned by hand" means writing my own configs
+            for how windows, services, and disks behave, rather than using the defaults.
           </p>
           <p>
             Right now I'm looking for a Systems or Backend Engineer role, while taking

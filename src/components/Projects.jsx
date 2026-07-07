@@ -10,9 +10,13 @@ const Projects = ({ isHome = false }) => {
         <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3">
           <span className="text-[var(--text-muted)]">$</span> ls ~/projects
         </p>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-2">
           {isHome ? "Featured Projects" : "All Projects"}
         </h2>
+        <p className="text-[var(--text-dim)] mb-12">
+          A few things I've built, from real apps to hands-on Linux configs. Click any
+          card to see the code.
+        </p>
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projectList.map((project) => (
             <Project key={project.id} project={project} />

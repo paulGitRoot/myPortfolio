@@ -84,9 +84,9 @@ const ContactPage = () => {
           </div>
           <button
             type="submit"
-            className="w-full py-3.5 bg-[var(--accent)] text-[var(--bg)] font-mono-display font-bold rounded-md hover:bg-[var(--accent-dim)] transition-colors"
+            className="w-full py-3.5 bg-[var(--accent)] text-[var(--bg)] font-bold rounded-md hover:bg-[var(--accent-dim)] transition-colors"
           >
-            {sent ? "opening mail client..." : "send_message()"}
+            {sent ? "Opening your email app…" : "Send Message"}
           </button>
         </form>
       </div>

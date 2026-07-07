@@ -16,6 +16,7 @@ import { SiFlutter, SiDart, SiTailwindcss, SiGo } from "react-icons/si";
 const groups = [
   {
     label: "backend",
+    blurb: "Building the server-side logic and databases behind an app",
     items: [
       { icon: <SiGo />, name: "Go" },
       { icon: <FaDatabase />, name: "PostgreSQL" },
@@ -25,6 +26,7 @@ const groups = [
   },
   {
     label: "systems / linux",
+    blurb: "Setting up and maintaining Linux machines and servers",
     items: [
       { icon: <FaLinux />, name: "Linux Admin" },
       { icon: <FaTerminal />, name: "i3wm" },
@@ -34,6 +36,7 @@ const groups = [
   },
   {
     label: "mobile / frontend",
+    blurb: "Building the parts of an app people actually see and tap",
     items: [
       { icon: <SiFlutter />, name: "Flutter" },
       { icon: <SiDart />, name: "Dart" },
@@ -43,6 +46,7 @@ const groups = [
   },
   {
     label: "tools & other",
+    blurb: "Other languages and services I build with regularly",
     items: [
       { icon: <FaFire />, name: "Firebase" },
       { icon: <FaJsSquare />, name: "JavaScript" },
@@ -58,9 +62,12 @@ const Skills = () => {
         <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3">
           <span className="text-[var(--text-muted)]">$</span> cat skills.txt
         </p>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-2">
           Skills
         </h2>
+        <p className="text-[var(--text-dim)] mb-12">
+          The languages, tools, and systems I use to build and ship things.
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {groups.map((group) => (
@@ -68,8 +75,11 @@ const Skills = () => {
               key={group.label}
               className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5"
             >
-              <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider mb-4">
+              <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider mb-1">
                 {group.label}
+              </p>
+              <p className="text-xs text-[var(--text-muted)] mb-4 leading-snug">
+                {group.blurb}
               </p>
               <ul className="space-y-3">
                 {group.items.map((item) => (
