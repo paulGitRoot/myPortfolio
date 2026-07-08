@@ -10,6 +10,7 @@ import {
   FaServer,
   FaHdd,
   FaCogs,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { SiFlutter, SiDart, SiTailwindcss, SiGo } from "react-icons/si";
 
@@ -17,6 +18,7 @@ const groups = [
   {
     label: "backend",
     blurb: "Building the server-side logic and databases behind an app",
+    learningLink: "https://roadmap.sh/backend",
     items: [
       { icon: <SiGo />, name: "Go" },
       { icon: <FaDatabase />, name: "PostgreSQL" },
@@ -27,6 +29,7 @@ const groups = [
   {
     label: "systems / linux",
     blurb: "Setting up and maintaining Linux machines and servers",
+    learningLink: "https://linuxjourney.com/",
     items: [
       { icon: <FaLinux />, name: "Linux Admin" },
       { icon: <FaTerminal />, name: "i3wm" },
@@ -37,6 +40,7 @@ const groups = [
   {
     label: "mobile / frontend",
     blurb: "Building the parts of an app people actually see and tap",
+    learningLink: "https://roadmap.sh/frontend",
     items: [
       { icon: <SiFlutter />, name: "Flutter" },
       { icon: <SiDart />, name: "Dart" },
@@ -47,6 +51,7 @@ const groups = [
   {
     label: "tools & other",
     blurb: "Other languages and services I build with regularly",
+    learningLink: "https://roadmap.sh/devops",
     items: [
       { icon: <FaFire />, name: "Firebase" },
       { icon: <FaJsSquare />, name: "JavaScript" },
@@ -71,25 +76,36 @@ const Skills = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {groups.map((group) => (
-            <div
+            <a
               key={group.label}
-              className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5"
+              href={group.learningLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--pink)] hover:-translate-y-1 transition-all duration-200 cursor-pointer"
             >
-              <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider mb-1">
-                {group.label}
-              </p>
+              <div className="flex items-center justify-between mb-1">
+                <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider">
+                  {group.label}
+                </p>
+                <FaExternalLinkAlt className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--pink)] transition-colors" />
+              </div>
               <p className="text-xs text-[var(--text-muted)] mb-4 leading-snug">
                 {group.blurb}
               </p>
               <ul className="space-y-3">
                 {group.items.map((item) => (
                   <li key={item.name} className="flex items-center gap-3 text-[var(--text-dim)]">
-                    <span className="text-[var(--accent-2)] text-lg">{item.icon}</span>
+                    <span className="text-[var(--accent-2)] text-lg group-hover:text-[var(--pink)] transition-colors">
+                      {item.icon}
+                    </span>
                     <span className="text-sm font-medium">{item.name}</span>
                   </li>
                 ))}
               </ul>
-            </div>
+              <p className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--pink)] transition-colors mt-4 pt-3 border-t border-[var(--border)]">
+                Learn more →
+              </p>
+            </a>
           ))}
         </div>
       </div>

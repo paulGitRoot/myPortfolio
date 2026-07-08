@@ -33,11 +33,11 @@ export const projects = [
     description:
       "A hand-tuned i3 window manager setup — Polybar, Picom, Dunst, Rofi, and custom scripts — built for a minimal, script-driven workflow. Maintained in parallel for both Mint/Ubuntu and Arch/CachyOS.",
     tech: ["i3wm", "Shell", "Lua", "Linux"],
-    github: "https://github.com/paulGitRoot/i3wm-setup",
+    github: "https://github.com/paulGitRoot/Arch_i3_setup",
     cover: "terminal",
     secondaryLink: {
-      label: "Arch/CachyOS variant",
-      url: "https://github.com/paulGitRoot/Arch_i3_setup",
+      label: "Mint/Ubuntu variant",
+      url: "https://github.com/paulGitRoot/i3wm-setup",
     },
     featured: true,
     status: "Actively maintained",

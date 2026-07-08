@@ -5,6 +5,7 @@ import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import ViewAllProjects from "../components/ViewAllProjects";
 
+
 const HomePage = () => {
   return (
     <>
