@@ -8,7 +8,7 @@ const Projects = ({ isHome = false }) => {
     <section id="projects" className="py-24 bg-[var(--bg-alt)] border-y border-[var(--border)]">
       <div className="max-w-6xl mx-auto px-6">
         <p
-          style={{ marginTop: "16px" }}
+          style={{ marginTop: "32px" }}
           className="font-mono-display text-[var(--text-muted)] text-sm mb-3"
         >
           <span className="text-[var(--text-muted)]">$</span> ls ~/projects
