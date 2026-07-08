@@ -19,7 +19,7 @@ const Navbar = () => {
     }`;
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-[var(--bg-alt)]/90 backdrop-blur border-b border-[var(--border)]">
+    <header className="fixed top-0 left-0 right-0 m-0 w-full z-50 bg-[var(--bg-alt)]/90 backdrop-blur border-b border-[var(--border)]">
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <NavLink to="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
           <span className="flex gap-1.5">
