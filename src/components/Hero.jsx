@@ -23,7 +23,10 @@ const Hero = () => (
     />
 
     <div className="relative max-w-5xl mx-auto px-6">
-      <p className="font-mono-display text-[var(--green)] text-sm mb-3 mt-12">
+      <p
+        style={{ marginTop: "32px" }}
+        className="font-mono-display text-[var(--green)] text-sm mb-3"
+      >
         <span className="text-[var(--text-muted)]">$</span> whoami
       </p>
 
