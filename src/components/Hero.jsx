@@ -23,19 +23,19 @@ const Hero = () => (
     />
 
     <div className="relative max-w-5xl mx-auto px-6">
-      <p className="font-mono-display text-[var(--green)] text-sm mb-3">
+      <p className="font-mono-display text-[var(--green)] text-sm mb-3 pt-4">
         <span className="text-[var(--text-muted)]">$</span> whoami
       </p>
 
       <div className="flex items-center gap-4 mb-4">
         <div
-          style={{ width: "24px", height: "24px" }}
-          className="rounded-full overflow-hidden border border-[var(--border)] shrink-0"
+          style={{ width: "56px", height: "56px" }}
+          className="rounded-full overflow-hidden border-2 border-[var(--border)] shrink-0"
         >
           <img
             src="/photo_2025-10-23_16-37-07.jpg"
             alt="Pawlos Addisu"
-            style={{ width: "24px", height: "24px", objectFit: "cover" }}
+            style={{ width: "56px", height: "56px", objectFit: "cover" }}
             className="grayscale"
           />
         </div>
