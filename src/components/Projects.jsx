@@ -7,7 +7,7 @@ const Projects = ({ isHome = false }) => {
   return (
     <section id="projects" className="py-24 bg-[var(--bg-alt)] border-y border-[var(--border)]">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3 pt-4">
+        <p className="font-mono-display text-[var(--text-muted)] text-sm mb-3 mt-4">
           <span className="text-[var(--text-muted)]">$</span> ls ~/projects
         </p>
         <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--text)] mb-2">
