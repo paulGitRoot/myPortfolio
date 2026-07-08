@@ -32,12 +32,12 @@ const Footer = () => {
         >
           <FaEnvelope />
         </a>
-        <a
-          href="#home"
-          className="text-sm font-mono-display text-[var(--text-muted)] hover:text-[var(--text)] self-center"
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-sm font-mono-display text-[var(--text-muted)] hover:text-[var(--text)] self-center cursor-pointer"
         >
           back to top ↑
-        </a>
+        </button>
       </div>
     </footer>
   );

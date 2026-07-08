@@ -81,13 +81,13 @@ const Skills = () => {
               href={group.learningLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--pink)] hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--accent-2)] hover:-translate-y-1 transition-all duration-200 cursor-pointer"
             >
               <div className="flex items-center justify-between mb-1">
                 <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider">
                   {group.label}
                 </p>
-                <FaExternalLinkAlt className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--pink)] transition-colors" />
+                <FaExternalLinkAlt className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--accent-2)] transition-colors" />
               </div>
               <p className="text-xs text-[var(--text-muted)] mb-4 leading-snug">
                 {group.blurb}
@@ -95,14 +95,14 @@ const Skills = () => {
               <ul className="space-y-3">
                 {group.items.map((item) => (
                   <li key={item.name} className="flex items-center gap-3 text-[var(--text-dim)]">
-                    <span className="text-[var(--accent-2)] text-lg group-hover:text-[var(--pink)] transition-colors">
+                    <span className="text-[var(--accent-2)] text-lg group-hover:text-[var(--accent-2)] transition-colors">
                       {item.icon}
                     </span>
                     <span className="text-sm font-medium">{item.name}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--pink)] transition-colors mt-4 pt-3 border-t border-[var(--border)]">
+              <p className="text-[10px] text-[var(--text-muted)] group-hover:text-[var(--accent-2)] transition-colors mt-4 pt-3 border-t border-[var(--border)]">
                 Learn more →
               </p>
             </a>

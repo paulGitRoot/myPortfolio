@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --bg: #1a1a17;
-  --bg-alt: #201f1b;
-  --surface: #262420;
-  --surface-hover: #2f2c26;
-  --border: #3d3a32;
+  --bg: #0e0e0e;
+  --bg-alt: #151515;
+  --surface: #1b1b1b;
+  --surface-hover: #232323;
+  --border: #2f2f2f;
   --text: #ebdbb2;
   --text-dim: #bdae93;
   --text-muted: #7c6f64;
