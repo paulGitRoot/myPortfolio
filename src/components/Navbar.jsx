@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 const links = [
   { to: "/", label: "home" },
@@ -26,7 +27,8 @@ const Navbar = () => {
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)]" />
             <span className="w-2.5 h-2.5 rounded-full bg-[var(--green)]" />
           </span>
-          <span className="font-mono-display text-[var(--text)] font-bold ml-2 group-hover:text-[var(--accent)] transition-colors">
+          <span className="font-mono-display text-[var(--text)] font-bold ml-2 group-hover:text-[var(--accent)] transition-colors flex items-center gap-1.5">
+            <FaHome className="text-[var(--accent-2)] text-sm" />
             pawlos@dev
           </span>
         </NavLink>

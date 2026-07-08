@@ -11,7 +11,7 @@ const specs = [
 ];
 
 const Hero = () => (
-  <section id="home" className="relative bg-[var(--bg)] pt-32 pb-24 overflow-hidden">
+  <section id="home" className="relative bg-[var(--bg)] pt-48 pb-24 overflow-hidden">
     {/* faint grid texture */}
     <div
       className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -28,11 +28,17 @@ const Hero = () => (
       </p>
 
       <div className="flex items-center gap-4 mb-4">
-        <img
-          src="/photo_2025-10-23_16-37-07.jpg"
-          alt="Pawlos Addisu"
-          className="w-6 h-6 rounded-full object-cover border border-[var(--border)] grayscale shrink-0"
-        />
+        <div
+          style={{ width: "24px", height: "24px" }}
+          className="rounded-full overflow-hidden border border-[var(--border)] shrink-0"
+        >
+          <img
+            src="/photo_2025-10-23_16-37-07.jpg"
+            alt="Pawlos Addisu"
+            style={{ width: "24px", height: "24px", objectFit: "cover" }}
+            className="grayscale"
+          />
+        </div>
         <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--text)] leading-tight">
           Pawlos Addisu
         </h1>
