@@ -34,7 +34,10 @@ const Footer = () => {
         </a>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-sm font-mono-display text-[var(--text-muted)] hover:text-[var(--text)] self-center cursor-pointer"
+          style={{ color: "#7c6f64" }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "#ebdbb2")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "#7c6f64")}
+          className="text-sm font-mono-display self-center cursor-pointer bg-transparent border-none"
         >
           back to top ↑
         </button>

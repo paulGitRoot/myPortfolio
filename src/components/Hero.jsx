@@ -67,7 +67,7 @@ const Hero = () => (
           <p className="text-[var(--green)] mb-4">
             <span className="text-[var(--text-muted)]">$</span> neofetch
             <span className="text-[var(--text-muted)] font-sans text-xs ml-2">
-              (a quick system summary, Linux-nerd tradition — think of it as my "at a glance" card)
+              (a Linux command for quick system summary, in this case listing my summary)
             </span>
           </p>
           <div className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2">

@@ -45,6 +45,11 @@ body {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 ::selection {
   background-color: var(--accent);
   color: var(--bg);

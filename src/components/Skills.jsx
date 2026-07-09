@@ -81,7 +81,7 @@ const Skills = () => {
               href={group.learningLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--accent-2)] hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+              className="group no-underline rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 hover:border-[var(--accent-2)] hover:-translate-y-1 transition-all duration-200 cursor-pointer"
             >
               <div className="flex items-center justify-between mb-1">
                 <p className="font-mono-display text-xs text-[var(--accent)] uppercase tracking-wider">
