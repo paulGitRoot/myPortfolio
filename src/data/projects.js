@@ -27,22 +27,6 @@ export const projects = [
     status: "Complete",
   },
   {
-    id: "i3wm-setup",
-    title: "i3wm Dotfiles",
-    tagline: "Daily-driven Linux ricing config",
-    description:
-      "A hand-tuned i3 window manager setup — Polybar, Picom, Dunst, Rofi, and custom scripts — built for a minimal, script-driven workflow. Maintained in parallel for both Mint/Ubuntu and Arch/CachyOS.",
-    tech: ["i3wm", "Shell", "Lua", "Linux"],
-    github: "https://github.com/paulGitRoot/Arch_i3_setup",
-    cover: "terminal",
-    secondaryLink: {
-      label: "Mint/Ubuntu variant",
-      url: "https://github.com/paulGitRoot/i3wm-setup",
-    },
-    featured: true,
-    status: "Actively maintained",
-  },
-  {
     id: "ostrich-algorithm",
     title: "Ostrich Algorithm Simulator",
     tagline: "Deadlock simulation with a Qt GUI",
@@ -75,8 +59,24 @@ export const projects = [
     tech: ["PHP", "MySQL", "JavaScript"],
     github: "https://github.com/paulGitRoot/Web-Application-Exercise",
     cover: "web",
-    featured: false,
+    featured: true,
     status: "Coursework project",
+  },
+  {
+    id: "i3wm-setup",
+    title: "i3wm Dotfiles",
+    tagline: "Daily-driven Linux ricing config",
+    description:
+      "A hand-tuned i3 window manager setup — Polybar, Picom, Dunst, Rofi, and custom scripts — built for a minimal, script-driven workflow. Maintained in parallel for both Mint/Ubuntu and Arch/CachyOS.",
+    tech: ["i3wm", "Shell", "Lua", "Linux"],
+    github: "https://github.com/paulGitRoot/Arch_i3_setup",
+    cover: "terminal",
+    secondaryLink: {
+      label: "Mint/Ubuntu variant",
+      url: "https://github.com/paulGitRoot/i3wm-setup",
+    },
+    featured: true,
+    status: "Actively maintained",
   },
 ];
 
