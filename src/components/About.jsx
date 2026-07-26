@@ -10,12 +10,15 @@ const About = () => {
           <p>
             I'm a Computer Science graduate from Addis Ababa University (Class of '26),
             building backend systems and getting my hands dirty at the OS level —
-            Linux administration, service management, and everything in between.
+            Linux administration, service management, and everything in between. I also
+            spent two months as a Networking Intern at Ethio Telecom, installing and
+            troubleshooting Wi-Fi and wired telephone lines on the Network Installation
+            & Maintenance team.
           </p>
           <p>
-            Day to day that means Go and PostgreSQL on the backend, Flutter/Firebase
-            when I need to ship something end-to-end, and a Linux Mint + i3wm setup
-            I've tuned by hand — i3wm is a lightweight, keyboard-driven desktop
+            Day to day that means Go and PostgreSQL on the backend, Flutter/Firebase or
+            React/Node.js when I need to ship something end-to-end, and a Linux Mint + i3wm
+            setup I've tuned by hand — i3wm is a lightweight, keyboard-driven desktop
             environment for Linux, and "tuned by hand" means writing my own configs
             for how windows, services, and disks behave, rather than using the defaults.
           </p>

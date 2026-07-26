@@ -11,8 +11,10 @@ import {
   FaHdd,
   FaCogs,
   FaExternalLinkAlt,
+  FaNodeJs,
+  FaGitAlt,
 } from "react-icons/fa";
-import { SiFlutter, SiDart, SiTailwindcss, SiGo } from "react-icons/si";
+import { SiFlutter, SiDart, SiTailwindcss, SiGo, SiMongodb, SiNextdotjs, SiRust, SiPhp } from "react-icons/si";
 
 const groups = [
   {
@@ -23,6 +25,8 @@ const groups = [
       { icon: <SiGo />, name: "Go" },
       { icon: <FaDatabase />, name: "PostgreSQL" },
       { icon: <FaServer />, name: "REST APIs" },
+      { icon: <SiMongodb />, name: "MongoDB" },
+      { icon: <FaNodeJs />, name: "Node.js" },
       { icon: <FaCuttlefish />, name: "C++" },
     ],
   },
@@ -35,6 +39,7 @@ const groups = [
       { icon: <FaTerminal />, name: "i3wm" },
       { icon: <FaCogs />, name: "systemd" },
       { icon: <FaHdd />, name: "LVM / Disk Mgmt" },
+      { icon: <FaGitAlt />, name: "Git" },
     ],
   },
   {
@@ -45,6 +50,7 @@ const groups = [
       { icon: <SiFlutter />, name: "Flutter" },
       { icon: <SiDart />, name: "Dart" },
       { icon: <FaReact />, name: "React" },
+      { icon: <SiNextdotjs />, name: "Next.js" },
       { icon: <SiTailwindcss />, name: "Tailwind" },
     ],
   },
@@ -56,6 +62,8 @@ const groups = [
       { icon: <FaFire />, name: "Firebase" },
       { icon: <FaJsSquare />, name: "JavaScript" },
       { icon: <FaPython />, name: "Python" },
+      { icon: <SiRust />, name: "Rust" },
+      { icon: <SiPhp />, name: "PHP" },
     ],
   },
 ];
@@ -95,7 +103,7 @@ const Skills = () => {
               <ul className="space-y-3">
                 {group.items.map((item) => (
                   <li key={item.name} className="flex items-center gap-3 text-[var(--text-dim)]">
-                    <span className="text-[var(--accent-2)] text-lg group-hover:text-[var(--accent-2)] transition-colors">
+                    <span className="text-[var(--accent-2)] text-lg">
                       {item.icon}
                     </span>
                     <span className="text-sm font-medium">{item.name}</span>
