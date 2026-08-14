@@ -107,4 +107,3 @@ The project is configured for Vercel. Import the repository, keep the default Vi
 
 - Email: [paulpapi94@gmail.com](mailto:paulpapi94@gmail.com)
 - GitHub: [github.com/paulGitRoot](https://github.com/paulGitRoot)
-- LinkedIn: [linkedin.com/in/pawlos-addisu](https://linkedin.com/in/pawlos-addisu)
