@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaPalette, FaCheck } from "react-icons/fa";
 
 const links = [
   { to: "/", label: "home" },
@@ -10,6 +10,27 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [themeOpen, setThemeOpen] = useState(false);
+  const [theme, setTheme] = useState(() => localStorage.getItem("terminal-theme") || "amber");
+
+  const themes = [
+    { id: "amber", label: "amber", color: "#fe8019" },
+    { id: "green", label: "green", color: "#b8bb26" },
+    { id: "blue", label: "blue", color: "#83a598" },
+  ];
+
+  const selectTheme = (nextTheme) => {
+    setTheme(nextTheme);
+    document.documentElement.dataset.terminalTheme = nextTheme;
+    localStorage.setItem("terminal-theme", nextTheme);
+    setThemeOpen(false);
+  };
+
+  useEffect(() => {
+    const syncTheme = (event) => setTheme(event.detail);
+    window.addEventListener("terminal-theme-change", syncTheme);
+    return () => window.removeEventListener("terminal-theme-change", syncTheme);
+  }, []);
 
   const linkClass = ({ isActive }) =>
     `px-3 py-1.5 rounded-md font-mono-display text-sm transition-colors ${
@@ -69,6 +90,31 @@ const Navbar = () => {
           />
         </button>
       </nav>
+
+      <div className="theme-picker theme-picker--floating">
+        <button
+          type="button"
+          className="theme-picker__trigger"
+          onClick={() => setThemeOpen((current) => !current)}
+          aria-label="Change terminal color theme"
+          aria-expanded={themeOpen}
+          title="Change terminal theme"
+        >
+          <FaPalette />
+          <span className="theme-picker__swatch" style={{ backgroundColor: themes.find((item) => item.id === theme)?.color }} />
+        </button>
+        {themeOpen && (
+          <div className="theme-picker__menu">
+            {themes.map((item) => (
+              <button key={item.id} type="button" onClick={() => selectTheme(item.id)}>
+                <span className="theme-picker__swatch" style={{ backgroundColor: item.color }} />
+                {item.label}
+                {theme === item.id && <FaCheck />}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
 
       {open && (
         <div className="md:hidden border-t border-[var(--border)] bg-[var(--bg-alt)] px-6 py-4 flex flex-col gap-2">

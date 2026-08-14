@@ -1,5 +1,4 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import ProjectCover from "./ProjectCover";
 
 const Project = ({ project }) => {
   const openRepo = () => window.open(project.github, "_blank", "noopener,noreferrer");
@@ -12,9 +11,7 @@ const Project = ({ project }) => {
       onKeyDown={(e) => (e.key === "Enter" ? openRepo() : null)}
       className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] overflow-hidden hover:border-[var(--accent)] transition-colors flex flex-col cursor-pointer focus:outline-none focus:border-[var(--accent)]"
     >
-      <ProjectCover type={project.cover} />
-
-      <div className="p-3 flex flex-col flex-grow">
+      <div className="p-3 flex flex-col flex-grow min-h-0">
         <div className="flex items-start justify-between mb-1">
           <h3 className="text-sm font-bold text-[var(--text)] font-mono-display">
             {project.title}

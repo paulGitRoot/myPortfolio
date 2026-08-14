@@ -1,5 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import TerminalMatrix from "./TerminalMatrix";
+import ScrambleText from "./ScrambleText";
 
 const specs = [
   { label: "OS", value: "Linux Mint (i3wm)" },
@@ -10,8 +12,19 @@ const specs = [
   { label: "Location", value: "Ethiopia" },
 ];
 
-const Hero = () => (
+const bootLines = ["Loading profile...", "Mounting projects...", "Network online.", "Welcome, visitor."];
+
+const Hero = () => {
+  const [bootIndex, setBootIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setBootIndex((current) => (current + 1) % bootLines.length), 2200);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
   <section id="home" className="relative bg-[var(--bg)] pt-48 pb-24 overflow-hidden">
+    <TerminalMatrix />
     {/* faint grid texture */}
     <div
       className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -23,6 +36,9 @@ const Hero = () => (
     />
 
     <div className="relative max-w-5xl mx-auto px-6">
+      <div className="hero-status font-mono-display" aria-live="polite">
+        <span className="status-led" /> {bootLines[bootIndex]}
+      </div>
       <p
         style={{ marginTop: "32px" }}
         className="font-mono-display text-[var(--green)] text-sm mb-3"
@@ -42,9 +58,11 @@ const Hero = () => (
             className="grayscale"
           />
         </div>
-        <h1 className="text-3xl md:text-5xl font-extrabold text-[var(--text)] leading-tight">
-          Pawlos Addisu
-        </h1>
+        <ScrambleText
+          as="h1"
+          text="Pawlos Addisu"
+          className="text-3xl md:text-5xl font-extrabold text-[var(--text)] leading-tight"
+        />
       </div>
 
       <p className="text-lg md:text-xl text-[var(--text-dim)] max-w-2xl mb-10">
@@ -54,7 +72,7 @@ const Hero = () => (
       </p>
 
       {/* neofetch-style terminal panel — a fun detail, explained below for anyone who doesn't speak Linux */}
-      <div className="rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl overflow-hidden max-w-3xl">
+      <div className="terminal-window rounded-lg border border-[var(--border)] bg-[var(--surface)] shadow-2xl overflow-hidden max-w-3xl">
         <div className="flex items-center gap-2 px-4 py-3 bg-[var(--surface-hover)] border-b border-[var(--border)]">
           <span className="w-3 h-3 rounded-full bg-[var(--red)]" />
           <span className="w-3 h-3 rounded-full bg-[var(--accent)]" />
@@ -88,7 +106,12 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-4 mt-10">
+      <p className="command-tip mt-5 font-mono-display text-xs text-[var(--text-muted)]">
+        <span className="command-tip__signal" aria-hidden="true">›_</span>
+        <span>press <kbd className="keycap">/</kbd> anywhere to run portfolio commands</span>
+      </p>
+
+      <div className="flex flex-wrap items-center gap-4 mt-8">
         <a
           href="#projects"
           className="px-6 py-3 rounded-md font-semibold bg-[var(--accent)] text-[var(--bg)] hover:bg-[var(--accent-dim)] transition-colors"
@@ -131,6 +154,7 @@ const Hero = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default Hero;
