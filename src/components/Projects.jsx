@@ -25,7 +25,6 @@ const Projects = ({ isHome = false }) => {
             <Project key={project.id} project={project} />
           ))}
         </div>
-
         {!isHome && (
           <p className="mt-10 text-sm text-[var(--text-dim)] font-mono-display">
             More coursework & smaller exercises live on{" "}
@@ -44,5 +43,4 @@ const Projects = ({ isHome = false }) => {
     </section>
   );
 };
-
 export default Projects;

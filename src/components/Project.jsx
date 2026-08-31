@@ -19,11 +19,9 @@ const Project = ({ project }) => {
           <FaGithub className="text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors text-base shrink-0 ml-3" />
         </div>
         <p className="text-xs text-[var(--accent-2)] mb-2">{project.tagline}</p>
-
         <p className="text-xs text-[var(--text-dim)] leading-snug mb-2 line-clamp-2">
           {project.description}
         </p>
-
         <div className="flex flex-wrap gap-1 mb-2">
           {project.tech.map((tech) => (
             <span
@@ -34,14 +32,12 @@ const Project = ({ project }) => {
             </span>
           ))}
         </div>
-
         <div className="flex items-center justify-between pt-2 border-t border-[var(--border)] mt-auto">
           <span className="text-[10px] text-[var(--text-muted)]">{project.status}</span>
           <span className="flex items-center gap-1 text-[11px] font-semibold text-[var(--accent)] group-hover:text-[var(--accent-dim)] transition-colors">
             See the code <FaExternalLinkAlt className="text-[9px]" />
           </span>
         </div>
-
         {project.secondaryLink && (
           <a
             href={project.secondaryLink.url}
@@ -57,5 +53,4 @@ const Project = ({ project }) => {
     </div>
   );
 };
-
 export default Project;

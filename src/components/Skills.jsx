@@ -13,8 +13,11 @@ import {
   FaExternalLinkAlt,
   FaNodeJs,
   FaGitAlt,
+  FaAws,
+  FaNetworkWired,
+  FaMicrochip,
 } from "react-icons/fa";
-import { SiFlutter, SiDart, SiTailwindcss, SiGo, SiMongodb, SiNextdotjs, SiRust, SiPhp } from "react-icons/si";
+import { SiFlutter, SiDart, SiTailwindcss, SiGo, SiMongodb, SiNextdotjs, SiRust, SiPhp, SiGnubash, SiNumpy, SiPandas, SiScikitlearn, SiPytorch } from "react-icons/si";
 
 const groups = [
   {
@@ -32,10 +35,13 @@ const groups = [
   },
   {
     label: "systems / linux",
-    blurb: "Setting up and maintaining Linux machines and servers",
+    blurb: "Setting up and maintaining Linux machines, servers, and cloud infra",
     learningLink: "https://linuxjourney.com/",
     items: [
       { icon: <FaLinux />, name: "Linux Admin" },
+      { icon: <FaAws />, name: "AWS" },
+      { icon: <FaNetworkWired />, name: "Networking" },
+      { icon: <SiGnubash />, name: "Bash" },
       { icon: <FaTerminal />, name: "i3wm" },
       { icon: <FaCogs />, name: "systemd" },
       { icon: <FaHdd />, name: "LVM / Disk Mgmt" },
@@ -64,6 +70,18 @@ const groups = [
       { icon: <FaPython />, name: "Python" },
       { icon: <SiRust />, name: "Rust" },
       { icon: <SiPhp />, name: "PHP" },
+    ],
+  },
+  {
+    label: "machine learning",
+    blurb: "Building and evaluating ML models on real datasets",
+    learningLink: "https://roadmap.sh/ai-data-scientist",
+    items: [
+      { icon: <SiNumpy />, name: "NumPy" },
+      { icon: <SiPandas />, name: "Pandas" },
+      { icon: <SiScikitlearn />, name: "scikit-learn" },
+      { icon: <SiPytorch />, name: "PyTorch" },
+      { icon: <FaMicrochip />, name: "GPU Computing (CUDA)" },
     ],
   },
 ];

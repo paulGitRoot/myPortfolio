@@ -27,6 +27,30 @@ export const projects = [
     status: "Complete",
   },
   {
+    id: "redis-clone",
+    title: "Redis Clone",
+    tagline: "In-memory data store, built from scratch",
+    description:
+      "A Redis-compatible server built in Go from scratch — raw TCP networking, concurrent client handling via goroutines, and a byte-accurate RESP protocol parser matching Redis's real wire format.",
+    tech: ["Go", "TCP", "RESP Protocol"],
+    github: "https://github.com/paulGitRoot/Redis_Clone_Go",
+    cover: "terminal",
+    featured: true,
+    status: "Actively developed",
+  },
+  {
+    id: "biomedical-classification",
+    title: "Biomedical Disease Classification",
+    tagline: "ML pipeline for biomedical tabular data",
+    description:
+      "An end-to-end ML pipeline on a biomedical tabular dataset — trained and compared four classical models (Logistic Regression, Random Forest, SVM, Gradient Boosting) against a PyTorch neural network trained on GPU, evaluated with precision, recall, F1, and ROC-AUC to handle class imbalance.",
+    tech: ["Python", "NumPy", "Pandas", "scikit-learn", "PyTorch", "CUDA"],
+    github: "https://github.com/paulGitRoot/ml-project",
+    cover: "graphics",
+    featured: true,
+    status: "Complete",
+  },
+  {
     id: "ostrich-algorithm",
     title: "Ostrich Algorithm Simulator",
     tagline: "Deadlock simulation with a Qt GUI",
@@ -59,7 +83,7 @@ export const projects = [
     tech: ["PHP", "MySQL", "JavaScript"],
     github: "https://github.com/paulGitRoot/Web-Application-Exercise",
     cover: "web",
-    featured: true,
+    featured: false,
     status: "Coursework project",
   },
   {
